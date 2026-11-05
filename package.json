@@ -1,0 +1,19 @@
+{
+  "name": "roadster-dash",
+  "version": "1.0.0",
+  "description": "Roadster Dash - 3D Tesla Roadster endless runner game replica with Cybertruck",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js 3001",
+    "dev": "node server.js 3001"
+  },
+  "keywords": [
+    "roadster",
+    "cybertruck",
+    "threejs",
+    "runner",
+    "game"
+  ],
+  "author": "",
+  "license": "MIT"
+}

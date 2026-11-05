@@ -1,0 +1,37 @@
+{
+  "id": "/roadsterdash/",
+  "name": "Roadster Dash",
+  "short_name": "Roadster Dash",
+  "description": "Jump, roll and boost through traffic in Roadster Dash.",
+  "start_url": "/roadsterdash/",
+  "scope": "/roadsterdash/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#09090c",
+  "theme_color": "#09090c",
+  "categories": [
+    "games",
+    "entertainment"
+  ],
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "/roadsterdash/icons/roadster-model-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/roadsterdash/icons/roadster-model-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/roadsterdash/icons/roadster-model-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
