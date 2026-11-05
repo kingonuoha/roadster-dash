@@ -63,15 +63,3 @@ Switch between vehicles anytime using the **ACTIVE VEHICLE** selector on the mai
 - **Customization Garage (Upgrade)**:
   - Custom paint colors, wheel designs, neon underglow colors, window tint levels, and custom license plates.
 
----
-
-## 🛠️ Reverse Engineering Architecture
-
-- **Tool**: [REA (morluto/rea)](https://github.com/morluto/rea) v6.8.0
-- **MCP Integration**: Configured and aligned in both **Antigravity** (`~/.gemini/config/mcp_config.json`) and **OpenCode** (`~/.config/opencode/opencode.jsonc`).
-- **Files**:
-  - `index.html`: Main game canvas, HUD, UI overlays, and vehicle switcher.
-  - `assets/game.js`: Core Three.js game engine, physics, procedural car generators (`eC` and `createCybertruck`).
-  - `assets/game.css`: Dark cyberpunk Tesla HUD theme and responsive layout.
-  - `public/images/cybertruck_ref.jpg`: 4-view turnaround reference sheet.
-  - `server.js`: Zero-dependency Node HTTP static server.
