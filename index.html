@@ -75,8 +75,7 @@
   
   <script type="module" crossorigin src="/assets/game.js"></script>
   <link rel="modulepreload" crossorigin href="/assets/app-path.js">
-  <link rel="modulepreload" crossorigin href="/assets/auth-client.js">
-  <link rel="stylesheet" crossorigin href="/assets/game.css">
+    <link rel="stylesheet" crossorigin href="/assets/game.css">
 
 <style>
 /* Vehicle Selector Panel */
@@ -227,6 +226,590 @@
 }
 </style>
 
+
+<style id="cyber-cockpit-styles">
+/* ============================================================
+   ROADSTER DASH: BALANCED CYBER COCKPIT STYLES
+   Cleaned-up Home Screen, Menu Hub & Local Arcade Hall of Fame
+   ============================================================ */
+
+/* Main Menu Overall Container */
+#menu.screen {
+  display: flex !important;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 24px 36px 16px;
+  background: radial-gradient(circle at 50% 30%, rgba(20, 24, 34, 0.45) 0%, rgba(8, 10, 14, 0.88) 100%);
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.menu-left {
+  width: 440px;
+  max-width: 45%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 10;
+}
+
+.menu-right {
+  width: 420px;
+  max-width: 45%;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+}
+
+/* Brand Styling */
+.brand {
+  margin-bottom: 2px;
+}
+.brand-sub {
+  font-family: var(--mono, monospace);
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  color: #ff3344;
+  text-shadow: 0 0 10px rgba(255, 51, 68, 0.5);
+  font-weight: 700;
+}
+.brand h1 {
+  font-family: var(--font-head, "Rajdhani", sans-serif);
+  font-size: 38px;
+  line-height: 0.95;
+  letter-spacing: 0.06em;
+  font-weight: 800;
+  margin: 2px 0 0;
+  text-transform: uppercase;
+  color: #fff;
+  display: flex;
+  gap: 8px;
+}
+.brand h1 span:first-child {
+  color: #ffffff;
+  text-shadow: 0 0 16px rgba(255, 255, 255, 0.4);
+}
+.brand h1 span:last-child {
+  color: #00f0ff;
+  text-shadow: 0 0 16px rgba(0, 240, 255, 0.6);
+}
+
+/* Pilot Callsign & Stats Cockpit Card */
+.pilot-hud-card {
+  background: rgba(14, 18, 26, 0.82);
+  border: 1px solid rgba(0, 240, 255, 0.25);
+  border-radius: 8px;
+  padding: 12px 14px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.pilot-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.pilot-callsign-box {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.hud-label {
+  font-family: var(--mono, monospace);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  color: rgba(255, 255, 255, 0.45);
+  text-transform: uppercase;
+}
+.pilot-name-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  color: #fff;
+  font-family: var(--font-head, "Rajdhani", sans-serif);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-align: left;
+  transition: color 0.15s, text-shadow 0.15s;
+}
+.pilot-name-btn:hover {
+  color: #00f0ff;
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.7);
+}
+.pilot-edit-icon {
+  font-size: 12px;
+  opacity: 0.5;
+}
+
+/* Wallet Pill inside HUD */
+.hud-wallet-pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 197, 49, 0.12);
+  border: 1px solid rgba(255, 197, 49, 0.4);
+  border-radius: 20px;
+  padding: 4px 12px;
+  color: #ffc531;
+  font-family: var(--mono, monospace);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.hud-wallet-pill:hover {
+  background: rgba(255, 197, 49, 0.22);
+  border-color: #ffc531;
+  box-shadow: 0 0 12px rgba(255, 197, 49, 0.4);
+  transform: translateY(-1px);
+}
+.hud-wallet-pill svg {
+  width: 15px;
+  height: 15px;
+  fill: #ffc531;
+}
+
+/* Best Records Row */
+.best-records-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  padding-top: 8px;
+}
+.record-pill {
+  display: flex;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.35);
+  padding: 6px 10px;
+  border-radius: 6px;
+  border-left: 3px solid #00f0ff;
+}
+.record-pill:last-child {
+  border-left-color: #ff3344;
+}
+.record-k {
+  font-family: var(--mono, monospace);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.5);
+}
+.record-v {
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  margin-top: 2px;
+}
+
+/* Active Vehicle Selector Panel adjustments */
+.vehicle-selector-panel {
+  margin: 0 !important;
+  background: rgba(14, 18, 26, 0.82) !important;
+  border: 1px solid rgba(0, 240, 255, 0.22) !important;
+  border-radius: 8px !important;
+  padding: 10px 12px !important;
+}
+
+/* Glowing Launch / Play Button */
+.play-glow-btn {
+  background: linear-gradient(135deg, #00f0ff 0%, #0077ff 100%) !important;
+  color: #06090e !important;
+  font-family: var(--font-head, "Rajdhani", sans-serif) !important;
+  font-size: 22px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.12em !important;
+  padding: 14px 20px !important;
+  border: none !important;
+  border-radius: 8px !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 12px !important;
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.5) !important;
+  transition: all 0.2s cubic-bezier(0.2, 0, 0, 1) !important;
+  text-shadow: none !important;
+  position: relative;
+  overflow: hidden;
+}
+.play-glow-btn:hover {
+  transform: translateY(-2px) scale(1.01) !important;
+  box-shadow: 0 0 35px rgba(0, 240, 255, 0.8), inset 0 1px 0 #fff !important;
+  background: linear-gradient(135deg, #33f3ff 0%, #1a88ff 100%) !important;
+}
+.play-hint kbd {
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(0, 0, 0, 0.35);
+  color: #06090e;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-family: var(--mono, monospace);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* 4-Tile Cyber Navigation Hub */
+.cyber-hub-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.hub-tile {
+  background: rgba(15, 20, 30, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  color: #fff;
+  text-align: left;
+  transition: all 0.2s ease;
+  position: relative;
+  backdrop-filter: blur(8px);
+}
+.hub-tile:hover {
+  background: rgba(22, 30, 48, 0.95);
+  border-color: rgba(0, 240, 255, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 240, 255, 0.2);
+}
+.hub-tile-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  background: rgba(0, 240, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #00f0ff;
+}
+.garage-tile .hub-tile-icon {
+  background: rgba(255, 51, 68, 0.15);
+  color: #ff3344;
+}
+.shop-tile .hub-tile-icon {
+  background: rgba(255, 197, 49, 0.15);
+  color: #ffc531;
+}
+.challenges-tile .hub-tile-icon {
+  background: rgba(0, 240, 255, 0.15);
+  color: #00f0ff;
+}
+.settings-tile .hub-tile-icon {
+  background: rgba(180, 190, 210, 0.15);
+  color: #b0c0d8;
+}
+.hub-tile-info {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  flex-grow: 1;
+}
+.hub-tile-title {
+  font-family: var(--font-head, "Rajdhani", sans-serif);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fff;
+}
+.hub-tile-sub {
+  font-family: var(--mono, monospace);
+  font-size: 9.5px;
+  color: rgba(255, 255, 255, 0.5);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 1px;
+}
+.hub-tile-arrow {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 14px;
+  transition: transform 0.2s, color 0.2s;
+}
+.hub-tile:hover .hub-tile-arrow {
+  transform: translateX(3px);
+  color: #00f0ff;
+}
+
+/* Right Panel: Arcade Hall of Fame & Daily Missions */
+.arcade-leaderboard-panel {
+  background: rgba(12, 16, 24, 0.88);
+  border: 1px solid rgba(0, 240, 255, 0.25);
+  border-radius: 10px;
+  padding: 14px 16px;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.55);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 100%;
+  box-sizing: border-box;
+}
+.lb-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 10px;
+}
+.lb-title-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.lb-badge-icon {
+  font-size: 16px;
+  filter: drop-shadow(0 0 6px #00f0ff);
+}
+.lb-main-title {
+  font-family: var(--font-head, "Rajdhani", sans-serif);
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  margin: 0;
+  color: #fff;
+}
+.lb-metrics {
+  display: flex;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  padding: 2px;
+  gap: 2px;
+}
+.metric-btn {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: var(--mono, monospace);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.metric-btn.on {
+  background: #00f0ff;
+  color: #06090e;
+  box-shadow: 0 0 8px rgba(0, 240, 255, 0.5);
+}
+
+/* Arcade Leaderboard List */
+.arcade-lb-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 6px 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 5px !important;
+  max-height: 180px !important;
+  overflow-y: auto !important;
+}
+.arcade-lb-list li {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  border-radius: 6px !important;
+  padding: 6px 10px !important;
+  font-family: var(--mono, monospace) !important;
+  font-size: 12px !important;
+  transition: background 0.15s !important;
+  min-height: 28px !important;
+}
+.arcade-lb-list li:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+.arcade-lb-list li.top1 {
+  background: rgba(255, 197, 49, 0.1) !important;
+  border-color: rgba(255, 197, 49, 0.4) !important;
+  box-shadow: inset 0 0 10px rgba(255, 197, 49, 0.08) !important;
+}
+.arcade-lb-list li.top1 .r {
+  color: #ffc531 !important;
+  font-weight: 800 !important;
+  text-shadow: 0 0 6px rgba(255, 197, 49, 0.6) !important;
+}
+.arcade-lb-list li.me {
+  border-color: rgba(0, 240, 255, 0.6) !important;
+  background: rgba(0, 240, 255, 0.08) !important;
+}
+.arcade-lb-list li .r {
+  width: 24px !important;
+  font-weight: 700 !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+.arcade-lb-list li .n {
+  flex-grow: 1 !important;
+  color: #fff !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.05em !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  padding: 0 6px !important;
+}
+.arcade-lb-list li .s {
+  color: #00f0ff !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.04em !important;
+}
+
+/* Daily Missions Section */
+.daily-missions-card {
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  padding-top: 10px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+  min-width: 0 !important;
+}
+.daily-missions-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+.dm-title {
+  font-family: var(--font-head, "Rajdhani", sans-serif) !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.12em !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+  text-transform: uppercase !important;
+}
+
+/* Reset Details Accordion inside Right Panel so both are visible */
+.menu-right .lb-panel,
+.menu-right details {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  width: 100% !important;
+}
+.menu-right .lb-panel::details-content {
+  block-size: auto !important;
+  overflow: visible !important;
+}
+
+/* Quests and Alerts List */
+.today-content {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+  max-height: 200px !important;
+  overflow-y: auto !important;
+  padding: 0 !important;
+  min-width: 0 !important;
+}
+.today-alerts, .today-quests {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 6px !important;
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100% !important;
+}
+.today-alert {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  background: rgba(255, 197, 49, 0.1) !important;
+  border: 1px solid rgba(255, 197, 49, 0.3) !important;
+  border-radius: 6px !important;
+  padding: 8px 10px !important;
+  font-size: 12px !important;
+  white-space: normal !important;
+  word-break: normal !important;
+}
+.today-quest {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important;
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-left: 3px solid #00f0ff !important;
+  border-radius: 6px !important;
+  padding: 8px 10px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+.today-quest-top {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  width: 100% !important;
+}
+.today-quest-name {
+  color: #fff !important;
+  font-family: var(--font, sans-serif) !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  white-space: normal !important;
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+}
+.today-quest-state {
+  font-family: var(--mono, monospace) !important;
+  font-size: 11px !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+  white-space: nowrap !important;
+}
+
+/* Fixed Footer styling */
+.menu-footer {
+  position: fixed !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 38px !important;
+  padding: 4px 36px !important;
+  background: rgba(6, 9, 14, 0.8) !important;
+  backdrop-filter: blur(10px) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  z-index: 100 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  font-size: 12px !important;
+  box-sizing: border-box !important;
+}
+
+/* Hide auth-locked elements across modals */
+.store-locked,
+#store-locked,
+#shop-account,
+#quest-account,
+#storage-account,
+#friends-login,
+#ach-guest,
+.ach-guest,
+#google-account,
+.google-account,
+#google-logout {
+  display: none !important;
+}
+
+/* Ensure Store content is directly visible */
+#store-content {
+  display: block !important;
+}
+</style>
+
 </head>
 <body>
   <!-- 코인·트로피·공사 중 아이콘 (여러 화면에서 <use> 로 쓴다) -->
@@ -342,53 +925,38 @@
 
     <!-- ── 메인 메뉴 ───────────────────────── -->
     <div id="menu" class="screen">
-      <!-- 보유 코인: 메뉴 오른쪽 위 (GAME_DESIGN 15). 전체 소리는 언어 옆 버튼·설정 창·M 키로 켜고 끈다 -->
-      <div class="menu-account-bar">
-        <button id="wallet" class="wallet menu-wallet hidden" type="button" aria-haspopup="dialog" aria-controls="activity-modal" data-i18n-aria-label="history.coins" aria-label="Coin history">
-          <svg class="coin" aria-hidden="true"><use href="#i-coin"/></svg>
-          <span id="coin-balance" class="mono">0</span>
-        </button>
-      </div>
+      <!-- Left Column: Cockpit & Controls -->
       <div class="menu-left">
         <div class="brand">
-          <div class="brand-sub">TESLA</div>
+          <div class="brand-sub">TESLA // CYBER EDITION</div>
           <h1><span>ROADSTER</span><span>DASH</span></h1>
         </div>
-        <div class="pilot">
-          <div class="pilot-label" data-i18n="menu.pilot">PILOT</div>
-          <div class="pilot-identity">
-            <button id="pilot-name" class="pilot-name"></button>
-          </div>
-          <div class="pilot-title hidden" id="pilot-title"></div>
-        </div>
-        <div id="google-account" class="google-account hidden" aria-busy="false">
-          <div class="google-row">
-            <button id="google-login" class="google-login" type="button">
-              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="#4285F4" d="M21.6 12.23c0-.71-.06-1.39-.18-2.05H12v3.88h5.38a4.6 4.6 0 0 1-2 3.02v2.51h3.24c1.89-1.74 2.98-4.3 2.98-7.36Z"/><path fill="#34A853" d="M12 22c2.7 0 4.96-.9 6.62-2.41l-3.24-2.51c-.9.6-2.05.96-3.38.96-2.6 0-4.8-1.76-5.59-4.12H3.07v2.59A10 10 0 0 0 12 22Z"/><path fill="#FBBC05" d="M6.41 13.92A6 6 0 0 1 6.1 12c0-.67.11-1.32.31-1.92V7.49H3.07A10 10 0 0 0 2 12c0 1.61.38 3.14 1.07 4.51l3.34-2.59Z"/><path fill="#EA4335" d="M12 5.96c1.47 0 2.79.51 3.83 1.51L18.7 4.6A9.6 9.6 0 0 0 12 2a10 10 0 0 0-8.93 5.49l3.34 2.59C7.2 7.72 9.4 5.96 12 5.96Z"/></svg>
-              <span data-i18n="auth.google">Sign in with Google</span>
+
+        <!-- Pilot HUD & Best Records Card -->
+        <div class="pilot-hud-card">
+          <div class="pilot-row">
+            <div class="pilot-callsign-box">
+              <span class="hud-label">ACTIVE PILOT</span>
+              <button id="pilot-name" class="pilot-name pilot-name-btn" title="Click to change callsign"></button>
+              <div class="pilot-title hidden" id="pilot-title"></div>
+            </div>
+            <button id="wallet" class="wallet hud-wallet-pill" type="button" aria-haspopup="dialog" aria-controls="activity-modal" aria-label="Coin history">
+              <svg class="coin" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-coin"/></svg>
+              <span id="coin-balance" class="mono">0</span>
             </button>
-            <span class="login-save-hint" data-i18n="auth.saveHint">Sign in to save your records and coins.</span>
-            <!-- 이 기기에서 Google 로그인을 본 적 없는 게스트에게만: 첫 로그인 보너스 -->
-            <span id="login-bonus" class="login-bonus hidden"><svg class="coin" aria-hidden="true"><use href="#i-coin"/></svg><span id="login-bonus-text"></span></span>
           </div>
-          <!-- 코인이 있는 게스트에게만 -->
-          <p id="guest-warning" class="guest-warning hidden"><span class="warn-mark" aria-hidden="true">!</span><span data-i18n="wallet.guestWarning"></span></p>
-          <div class="account-actions">
-            <span id="google-status" class="account-hint" role="status" aria-live="polite"></span>
-            <button id="google-retry" class="account-link hidden" type="button" data-i18n="auth.retry">Retry saving records</button>
-          </div>
-        </div>
-        <div class="best-records">
-          <div class="best">
-            <div><span class="k" data-i18n="menu.best">BEST</span><span class="v mono" id="best-score">—</span></div>
-            <div><span class="k" data-i18n="menu.distance">DIST</span><span class="v mono" id="best-dist">—</span></div>
+          <div class="best-records-row">
+            <div class="record-pill">
+              <span class="record-k">BEST SCORE</span>
+              <span class="record-v mono" id="best-score">—</span>
+            </div>
+            <div class="record-pill">
+              <span class="record-k">BEST DISTANCE</span>
+              <span class="record-v mono" id="best-dist">—</span>
+            </div>
           </div>
         </div>
-        <div id="challenge" class="challenge hidden">
-          <p id="challenge-text"></p>
-          <button id="challenge-friend" class="ghost hidden" type="button" data-i18n="friends.addTitle">Add friends</button>
-        </div>
-        
+
         <!-- Vehicle Selector (Roadster vs Cybertruck) -->
         <div id="vehicle-selector" class="vehicle-selector-panel">
           <div class="vehicle-selector-header">
@@ -406,124 +974,162 @@
             </button>
           </div>
         </div>
-        <button id="play-btn" class="primary"><span data-i18n="menu.play">PLAY</span> <span class="hint">SPACE</span></button>
-        <!-- 퀘스트 · 도전과제 · 보관함 / 상점 · 아이템 · 업그레이드 (랭킹은 오른쪽 패널에 늘 보인다) -->
-        <div class="menu-row economy-row trio-row">
-          <button id="quest-btn" class="ghost quest-btn" type="button">
-            <svg class="ico-trophy" aria-hidden="true"><use href="#i-quest"/></svg><span data-i18n="menu.quests">Quests</span><span id="quest-badge" class="ach-badge hidden"></span>
+
+        <!-- Big Launch Run CTA -->
+        <button id="play-btn" class="primary play-glow-btn">
+          <span>LAUNCH RUN</span>
+          <span class="play-hint"><kbd>SPACE</kbd></span>
+        </button>
+
+        <!-- 4-Tile Navigation Hub -->
+        <div class="cyber-hub-grid">
+          <button id="upgrade-btn" class="hub-tile garage-tile" type="button">
+            <div class="hub-tile-icon"><svg class="ico-item" aria-hidden="true"><use href="#i-paint"/></svg></div>
+            <div class="hub-tile-info">
+              <span class="hub-tile-title">GARAGE</span>
+              <span class="hub-tile-sub">Paints · Neon · Plates</span>
+            </div>
+            <span class="hub-tile-arrow">→</span>
           </button>
-          <button id="ach-btn" class="ghost ach-btn" type="button">
-            <svg class="ico-trophy" aria-hidden="true"><use href="#i-trophy"/></svg><span data-i18n="menu.achievements">Achievements</span><span id="ach-badge" class="ach-badge hidden"></span>
+          <button id="item-btn" class="hub-tile shop-tile" type="button">
+            <div class="hub-tile-icon"><svg class="ico-item" aria-hidden="true"><use href="#i-revive"/></svg></div>
+            <div class="hub-tile-info">
+              <span class="hub-tile-title">SHOP</span>
+              <span class="hub-tile-sub">Shields · Boosts · Items</span>
+            </div>
+            <span class="hub-tile-arrow">→</span>
           </button>
-          <button id="storage-btn" class="ghost storage-btn" type="button">
-            <svg class="ico-trophy" aria-hidden="true"><use href="#i-locker"/></svg><span data-i18n="menu.storage">Locker</span><span id="storage-badge" class="ach-badge hidden">NEW</span>
+          <button id="ach-btn" class="hub-tile challenges-tile" type="button">
+            <div class="hub-tile-icon"><svg class="ico-trophy" aria-hidden="true"><use href="#i-trophy"/></svg></div>
+            <div class="hub-tile-info">
+              <span class="hub-tile-title">CHALLENGES</span>
+              <span class="hub-tile-sub">Quests &amp; Badges</span>
+            </div>
+            <span id="ach-badge" class="ach-badge hidden"></span>
+            <span class="hub-tile-arrow">→</span>
+          </button>
+          <button id="settings-btn" class="hub-tile settings-tile" type="button">
+            <div class="hub-tile-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
+            <div class="hub-tile-info">
+              <span class="hub-tile-title">SETTINGS</span>
+              <span class="hub-tile-sub">Audio &amp; Display</span>
+            </div>
+            <span class="hub-tile-arrow">→</span>
           </button>
         </div>
-        <div class="menu-row economy-row store-menu-row">
-          <button id="store-btn" class="ghost store-btn" type="button"><svg class="ico-item" aria-hidden="true"><use href="#i-coin"/></svg><span data-i18n="menu.store">Store</span></button>
-          <button id="item-btn" class="ghost shop-btn" type="button"><svg class="ico-item" aria-hidden="true"><use href="#i-revive"/></svg><span data-i18n="menu.items">Items</span></button>
-          <button id="upgrade-btn" class="ghost garage-btn" type="button"><svg class="ico-item" aria-hidden="true"><use href="#i-paint"/></svg><span data-i18n="menu.upgrade">Upgrade</span></button>
-        </div>
-        <div class="menu-row menu-utility-row">
-          <button id="history-btn" class="ghost" type="button" data-i18n="history.menu">History</button>
-          <button id="friends-btn" class="ghost friends-btn" type="button"><span data-i18n="menu.friends">Friends</span><span id="friends-badge" class="ach-badge hidden"></span></button>
-          <button id="settings-btn" class="ghost" data-i18n="menu.settings"></button>
-          <button id="help-btn" class="ghost" data-i18n="menu.help"></button>
+
+        <!-- Auxiliary Hidden Containers for Legacy Game Handlers -->
+        <div style="display:none !important;" aria-hidden="true">
+          <button id="quest-btn" type="button"><span id="quest-badge"></span></button>
+          <button id="storage-btn" type="button"><span id="storage-badge"></span></button>
+          <button id="store-btn" type="button"></button>
+          <button id="history-btn" type="button"></button>
+          <button id="friends-btn" type="button"><span id="friends-badge"></span></button>
+          <button id="help-btn" type="button"></button>
+          <div id="challenge"><p id="challenge-text"></p><button id="challenge-friend"></button></div>
+          <div id="google-account">
+            <button id="google-login"></button>
+            <span class="login-save-hint"></span>
+            <span id="login-bonus"></span>
+            <span id="login-bonus-text"></span>
+            <p id="guest-warning"></p>
+            <span id="google-status"></span>
+            <button id="google-retry"></button>
+            <button id="google-logout"></button>
+          </div>
         </div>
       </div>
+
+      <!-- Right Column: Local Arcade Hall of Fame & Daily Missions -->
       <div class="menu-right">
-        <!-- 소식: 받을 보상·친구 신청 알림, 일일 퀘스트, 친구 기록 (GAME_DESIGN 19.4.1). 기본으로 열려 있고 랭킹은 접혀 있다.
-             두 창은 같은 name 이라 한 번에 하나만 펼쳐진다 -->
-        <details id="menu-today" class="lb-panel today-panel" name="menu-panel" open>
-          <summary class="lb-toggle" aria-controls="today-content">
-            <span class="lb-title today-title"><span data-i18n="today.title">UPDATES</span><span id="today-badge" class="ach-badge" hidden></span></span>
-            <span class="lb-toggle-action">
-              <span class="lb-collapse" data-i18n="lb.collapse">Collapse</span>
-              <span class="lb-expand" data-i18n="lb.expand">Expand</span>
-              <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg>
-            </span>
-          </summary>
-          <div id="today-content" class="today-content">
-            <section class="today-section" aria-labelledby="today-alerts-title">
-              <h3 class="today-head" id="today-alerts-title" data-i18n="today.alerts">Notifications</h3>
-              <ul id="today-alerts" class="today-alerts"></ul>
-            </section>
-            <section class="today-section" aria-labelledby="today-quests-title">
-              <div class="today-head-row"><h3 class="today-head" id="today-quests-title" data-i18n="quest.daily">Daily quests</h3><span id="today-reset" class="today-meta"></span></div>
-              <ul id="today-quests" class="today-quests"></ul>
-            </section>
-            <section class="today-section" aria-labelledby="today-friends-title">
-              <div class="today-head-row"><h3 class="today-head" id="today-friends-title" data-i18n="today.friendsTitle">Friends this week</h3></div>
-              <div id="today-metrics" class="today-metrics" role="group" aria-labelledby="today-friends-title">
-                <button type="button" data-metric="distance" class="on" aria-pressed="true" data-i18n="lb.distance">DISTANCE</button>
-                <button type="button" data-metric="score" aria-pressed="false" data-i18n="lb.score">SCORE</button>
-              </div>
-              <ol id="today-friends" class="lb-list today-friends"></ol>
-            </section>
-          </div>
-        </details>
-        <details id="menu-rankings" class="lb-panel" name="menu-panel">
-          <summary class="lb-toggle" aria-controls="lb-menu-content">
-            <span id="lb-menu-title" class="lb-title" data-i18n="lb.globalTitle">GLOBAL TOP 500</span>
-            <span class="lb-toggle-action">
-              <span class="lb-collapse" data-i18n="lb.collapse">Collapse</span>
-              <span class="lb-expand" data-i18n="lb.expand">Expand</span>
-              <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg>
-            </span>
-          </summary>
-          <div id="lb-menu-content">
-            <div class="lb-head">
-              <div class="lb-tabs" data-target="menu">
-                <button data-scope="all" class="on" aria-pressed="true" data-i18n="lb.all">ALL-TIME</button>
-                <button data-scope="weekly" aria-pressed="false" data-i18n="lb.weekly">WEEKLY</button>
-              </div>
+        <div class="arcade-leaderboard-panel">
+          <div class="lb-header-bar">
+            <div class="lb-title-group">
+              <span class="lb-badge-icon">⚡</span>
+              <h2 class="lb-main-title">ARCADE HALL OF FAME</h2>
             </div>
-            <div class="lb-areas" data-target="menu">
-              <button data-area="global" class="on" aria-pressed="true" data-i18n="lb.global">GLOBAL</button>
-              <button data-area="region" aria-pressed="false" data-i18n="lb.region">Regional records</button>
-            </div>
-            <div id="lb-weekly-menu" class="lb-weekly lb-note" hidden></div>
             <div class="lb-metrics" data-target="menu">
-              <button data-metric="distance" class="on" aria-pressed="true" data-i18n="lb.distance">DISTANCE</button>
-              <button data-metric="score" aria-pressed="false" data-i18n="lb.score">SCORE</button>
+              <button data-metric="score" class="metric-btn on" aria-pressed="true">SCORE</button>
+              <button data-metric="distance" class="metric-btn" aria-pressed="false">DIST</button>
             </div>
-            <div id="lb-region-menu" class="lb-region-context lb-note" hidden>
-              <div class="lb-region-heading">
-                <span id="lb-region-label-menu"></span>
-                <button class="lb-region-info" type="button" aria-expanded="false" aria-controls="lb-region-help-menu" aria-label="How regional records are counted" data-i18n-aria-label="lb.regionInfoLabel"><span aria-hidden="true">i</span></button>
-              </div>
-              <p class="lb-region-help" id="lb-region-help-menu" data-i18n="lb.regionHelp" hidden></p>
-            </div>
-            <ol id="lb-menu" class="lb-list"></ol>
-            <div class="lb-note" id="lb-note"></div>
           </div>
-        </details>
+
+          <div class="lb-container">
+            <details id="menu-rankings" class="lb-panel" open>
+              <summary class="lb-toggle" style="display:none !important;"></summary>
+              <div id="lb-menu-content">
+                <div class="lb-head" style="display:none !important;">
+                  <div class="lb-tabs" data-target="menu">
+                    <button data-scope="all" class="on" aria-pressed="true"></button>
+                    <button data-scope="weekly" aria-pressed="false"></button>
+                  </div>
+                </div>
+                <div class="lb-areas" data-target="menu" style="display:none !important;">
+                  <button data-area="global" class="on" aria-pressed="true"></button>
+                </div>
+                <div id="lb-weekly-menu" hidden></div>
+                <div id="lb-region-menu" hidden>
+                  <span id="lb-region-label-menu"></span>
+                  <button class="lb-region-info" type="button" aria-expanded="false" aria-controls="lb-region-help-menu" hidden></button>
+                  <p class="lb-region-help" id="lb-region-help-menu" hidden></p>
+                </div>
+                <span id="lb-menu-title" class="hidden"></span>
+                <ol id="lb-menu" class="lb-list arcade-lb-list"></ol>
+                <div class="lb-note" id="lb-note" style="text-align:center; margin-top:8px; font-size:10px; opacity:0.6;">LOCAL ARCADE RECORDS // SAVED LOCALLY</div>
+              </div>
+            </details>
+          </div>
+
+          <!-- Daily Missions Quick-Card -->
+          <div class="daily-missions-card">
+            <div class="daily-missions-header">
+              <span class="dm-title">DAILY MISSIONS &amp; CHECK-IN</span>
+              <span id="today-badge" class="ach-badge" hidden></span>
+              <span id="today-reset" class="today-meta" style="font-family:var(--mono); font-size:10px; color:rgba(255,255,255,0.4);"></span>
+            </div>
+            <details id="menu-today" class="lb-panel today-panel" open>
+              <summary class="lb-toggle" style="display:none !important;"></summary>
+              <div id="today-content" class="today-content">
+                <section class="today-section">
+                  <h3 class="today-head" id="today-alerts-title" data-i18n="today.alerts" style="display:none;">Notifications</h3>
+                  <ul id="today-alerts" class="today-alerts"></ul>
+                </section>
+                <section class="today-section">
+                  <h3 class="today-head" id="today-quests-title" data-i18n="quest.daily" style="display:none;">Daily quests</h3>
+                  <ul id="today-quests" class="today-quests"></ul>
+                </section>
+                <section class="today-section" style="display:none !important;">
+                  <h3 class="today-head" id="today-friends-title" style="display:none;">Friends</h3>
+                  <div id="today-metrics" class="today-metrics"></div>
+                  <ol id="today-friends" class="lb-list today-friends"></ol>
+                </section>
+              </div>
+            </details>
+          </div>
+        </div>
       </div>
+
+      <!-- Minimalist Clean Footer -->
       <footer class="menu-footer no-touch">
         <div class="footer-info">
           <nav class="footer-links" aria-label="Site information">
-            <a href="/roadsterdash/pricing" data-policy-link="pricing" data-i18n="footer.pricing">Coin purchases</a>
-            <a href="/roadsterdash/refunds" data-policy-link="refunds" data-i18n="footer.refunds">Refunds</a>
-            <a href="/roadsterdash/privacy" data-policy-link="privacy" data-i18n="footer.privacy">Privacy</a>
-            <a href="/roadsterdash/terms" data-policy-link="terms" data-i18n="footer.terms">Terms</a>
-            <button id="about-game-btn" class="footer-link" type="button" aria-haspopup="dialog" aria-controls="about-game" data-i18n="seo.heading">About the game</button>
+            <button id="about-game-btn" class="footer-link" type="button" aria-haspopup="dialog" aria-controls="about-game">About Roadster Dash</button>
+            <button class="footer-link" type="button" onclick="document.getElementById(help-btn).click()">Controls Guide</button>
             <div class="footer-tools">
-              <a href="/roadsterdash/legal" data-policy-link="legal" data-i18n="footer.legal">About &amp; contact</a>
               <div class="menu-preferences">
                 <label class="menu-language">
                   <span data-i18n="menu.language">Language</span>
                   <select id="language-select" data-i18n-aria-label="menu.language" aria-label="Language"></select>
                 </label>
-                <button id="menu-mute" class="key-btn mute-btn menu-mute" type="button" aria-label="All sound" data-i18n-aria-label="set.master" aria-pressed="true"><svg class="ico ico-on" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 6h3l4-3.5v11L5 10H2z"/><path class="wave" d="M11 5.5a3.5 3.5 0 0 1 0 5M12.6 3.6a6 6 0 0 1 0 8.8"/></svg><svg class="ico ico-off" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 6h3l4-3.5v11L5 10H2z"/><path class="wave" d="M11 5.5l4 5M15 5.5l-4 5"/></svg></button>
+                <button id="menu-mute" class="key-btn mute-btn menu-mute" type="button" aria-label="All sound" data-i18n-aria-label="set.master" aria-pressed="true">
+                  <svg class="ico ico-on" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 6h3l4-3.5v11L5 10H2z"/><path class="wave" d="M11 5.5a3.5 3.5 0 0 1 0 5M12.6 3.6a6 6 0 0 1 0 8.8"/></svg>
+                  <svg class="ico ico-off" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 6h3l4-3.5v11L5 10H2z"/><path class="wave" d="M11 5.5l4 5M15 5.5l-4 5"/></svg>
+                </button>
               </div>
-              <button id="google-logout" class="footer-link hidden" type="button" data-i18n="auth.logout">Sign out</button>
             </div>
           </nav>
-          <p class="footer-note" data-i18n="footer.independent">Independent fan game. Not affiliated with Tesla, Inc.</p>
+          <p class="footer-note">Tesla Roadster Dash // Cyber Edition · Procedural 3D WebGL Runner · Local Storage Mode</p>
         </div>
-        <a class="roadster-buy" href="https://www.tesla.com/roadster" target="_blank" rel="noopener noreferrer">
-          <span data-i18n="menu.buyRoadster">Tesla Roadster 사러가기</span><span aria-hidden="true">↗</span>
-        </a>
       </footer>
     </div>
 
