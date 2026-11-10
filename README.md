@@ -1,6 +1,6 @@
-# Roadster Dash: Cyber Edition ⚡
+# Tesla-Dash: Cyber Edition ⚡
 
-A high-performance local replication and expansion of **[Roadster Dash](https://morpii.com/roadsterdash/)**, the 3D Tesla browser-based endless runner game, reverse engineered using **[REA (Reverse Engineer Anything)](https://github.com/morluto/rea)** and expanded with **new playable vehicles**.
+A high-performance local 3D endless runner expansion featuring **Tesla Roadster**, **Cybertruck**, and **Robotaxi (Cybercab)** with full procedural Three.js models and customization.
 
 ---
 
@@ -17,7 +17,7 @@ Then open your browser to **[http://localhost:3001](http://localhost:3001)** (or
 
 ## 🏎️ Playable Vehicles
 
-The game features an interactive vehicle selection system with custom procedural Three.js models:
+The game features an interactive vehicle selection system with custom procedural Three.js models and angled preview renders:
 
 ### 1. 🏎️ Tesla Roadster (Next-Gen Hypercar)
 - **Profile**: Curvature-optimized aerodynamic body with active carbon rear wing.
@@ -29,10 +29,14 @@ The game features an interactive vehicle selection system with custom procedural
 - **Lighting**: Signature full-width continuous horizontal white LED blade lightbar (front) and red lightbar blade (rear).
 - **Armor Glass**: Acoustic polymer-layered tinted armor greenhouse.
 - **Bed / Vault**: 6' x 4' vault with motorized tonneau cover slats and active rear aero flap.
-- **Wheels**: Heavy all-terrain rugged tires with custom 7-sided polygonal cyber aero wheel covers.
+- **Wheels**: Heavy all-terrain rugged tires with customizable wheel styles & paint finishes.
 - **Blueprints & Reference**: Includes generated 4-view orthographic reference sheet (`public/images/cybertruck_ref.jpg`).
 
-Switch between vehicles anytime using the **ACTIVE VEHICLE** selector on the main menu, or inspect full 3D specs using the **📐 3D BLUEPRINT** button.
+### 3. 🚖 Tesla Robotaxi (Cybercab)
+- **Profile**: Aerodynamic autonomous 2-passenger coupe with butterfly doors, windowless fastback hatch, and continuous front & rear LED lightbars.
+- **Stance**: Staggered 18" front / 21" rear flush solid aero disc wheels with metallic rim accents and full custom wheel/paint/tint/neon/plate support.
+
+Switch between vehicles anytime using the 3-car angled image dock on the main menu or directly inside the **Garage** while customizing paint, wheels, tint, plates, neon, and boost.
 
 ---
 
