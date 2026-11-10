@@ -1,8 +1,8 @@
 {
   "id": "/roadsterdash/",
-  "name": "Roadster Dash",
-  "short_name": "Roadster Dash",
-  "description": "Jump, roll and boost through traffic in Roadster Dash.",
+  "name": "Tesla-Dash",
+  "short_name": "Tesla-Dash",
+  "description": "Jump, roll and boost through traffic in Tesla-Dash.",
   "start_url": "/roadsterdash/",
   "scope": "/roadsterdash/",
   "display": "standalone",

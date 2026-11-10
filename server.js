@@ -67,7 +67,7 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(PORT, '0.0.0.0', () => {
-  console.log(`Roadster Dash server running at:`);
+  console.log(`Tesla-Dash server running at:`);
   console.log(`  > http://localhost:${PORT}/`);
   console.log(`  > http://127.0.0.1:${PORT}/`);
 });
