@@ -769,6 +769,54 @@ body.backend-notice #menu.screen {
 .menu-footer .footer-note {
   flex-basis: auto;
 }
+.menu-footer .footer-credit {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(226, 232, 240, 0.78);
+  pointer-events: auto;
+}
+.footer-credit .credit-sep {
+  opacity: 0.45;
+}
+.footer-credit .credit-links {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.footer-credit .credit-icon-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  color: rgba(226, 232, 240, 0.85);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  text-decoration: none;
+  pointer-events: auto;
+  transition: color 0.18s ease, background 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+}
+.footer-credit .credit-icon-link svg {
+  width: 14px;
+  height: 14px;
+  display: block;
+}
+.footer-credit .credit-icon-link.linkedin:hover,
+.footer-credit .credit-icon-link.linkedin:focus-visible {
+  color: #38bdf8;
+  background: rgba(10, 102, 194, 0.24);
+  border-color: rgba(56, 189, 248, 0.6);
+  transform: translateY(-1px);
+}
+.footer-credit .credit-icon-link.github:hover,
+.footer-credit .credit-icon-link.github:focus-visible {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.45);
+  transform: translateY(-1px);
+}
 
 /* Scope auth-locked hiding to local mode so Google auth UI can be restored by removing body.local-mode */
 body.local-mode .store-locked,
@@ -847,6 +895,9 @@ body.local-mode #store-content {
   }
   .menu-footer .footer-note {
     flex-basis: 100%;
+  }
+  .menu-footer .footer-credit {
+    justify-content: flex-start;
   }
 }
 
@@ -1192,7 +1243,18 @@ body.local-mode #store-content {
               </div>
             </div>
           </nav>
-          <p class="footer-note">Tesla-Dash // Cyber Edition · Procedural 3D WebGL Runner · Local Storage Mode</p>
+          <div class="footer-note footer-credit">
+            <span>Made by me</span>
+            <span class="credit-sep" aria-hidden="true">·</span>
+            <div class="credit-links">
+              <a class="credit-icon-link linkedin" href="https://www.linkedin.com/in/kingsley-u-onuoha-67270422b/" target="_blank" rel="noopener noreferrer" aria-label="Kingsley Onuoha on LinkedIn" title="LinkedIn — Kingsley Onuoha">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+              </a>
+              <a class="credit-icon-link github" href="https://github.com/kingonuoha" target="_blank" rel="noopener noreferrer" aria-label="Kingsley Onuoha on GitHub" title="GitHub — @kingonuoha">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/></svg>
+              </a>
+            </div>
+          </div>
         </div>
       </footer>
     </div>
@@ -1774,7 +1836,7 @@ body.local-mode #store-content {
         </div>
         <div class="veh-modal-body">
           <div class="veh-img-container">
-            <img id="veh-modal-img" src="/public/images/cybertruck_ref.jpg" alt="Tesla Cybertruck 4-View Reference Sheet" class="veh-ref-img" />
+            <img id="veh-modal-img" src="/images/cybertruck_ref.jpg" alt="Tesla Cybertruck 4-View Reference Sheet" class="veh-ref-img" />
             <div id="veh-modal-caption" class="veh-img-caption">PROCEDURAL THREE.JS REPLICATION // 4-VIEW ORTHOGRAPHIC BLUEPRINT</div>
           </div>
           <div id="veh-specs-grid" class="veh-specs-grid">
@@ -1805,7 +1867,7 @@ body.local-mode #store-content {
     const VEHICLE_SPECS = {
       cybertruck: {
         title: 'TESLA CYBERTRUCK // 3D BLUEPRINT',
-        img: '/public/images/cybertruck_ref.jpg',
+        img: '/images/cybertruck_ref.jpg',
         alt: 'Tesla Cybertruck 4-View Reference Sheet',
         caption: 'PROCEDURAL THREE.JS REPLICATION // 4-VIEW ORTHOGRAPHIC BLUEPRINT',
         specs: [
